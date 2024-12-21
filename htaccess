@@ -1,0 +1,6 @@
+Options –Indexes
+Options All -Indexes
+
+ErrorDocument 404 /errors.html?code=404
+ErrorDocument 403 /errors.html?code=403
+ErrorDocument 500 /errors.html?code=500 
