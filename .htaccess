@@ -1,6 +1,14 @@
 Options –Indexes
 Options All -Indexes
 
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+
 ErrorDocument 404 /errors.html?code=404
 ErrorDocument 403 /errors.html?code=403
 ErrorDocument 500 /errors.html?code=500 
+
+RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.html[? ].*$"
+RewriteRule .* - [L,R=404]
