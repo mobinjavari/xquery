@@ -6,9 +6,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html
 
-ErrorDocument 404 /errors.html?code=404
-ErrorDocument 403 /errors.html?code=403
-ErrorDocument 500 /errors.html?code=500 
+ErrorDocument 404 /error.html
+ErrorDocument 403 /error.html
+ErrorDocument 500 /error.html
 
 RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.html[? ].*$"
 RewriteRule .* - [L,R=404]
