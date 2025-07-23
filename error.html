@@ -34,62 +34,66 @@
         Alpine.data("errorHandler", () => ({
           error: null,
 
+          errors: {
+            400: {
+              code: "400",
+              title: "درخواست نامعتبر",
+              titleEn: "Bad Request",
+              message:
+                "درخواست ارسال شده معتبر نمی‌باشد. لطفا مجددا تلاش کنید.",
+            },
+            401: {
+              code: "401",
+              title: "عدم دسترسی",
+              titleEn: "Unauthorized",
+              message:
+                "شما مجوز دسترسی به این بخش را ندارید. لطفا وارد حساب کاربری خود شوید.",
+            },
+            403: {
+              code: "403",
+              title: "دسترسی ممنوع",
+              titleEn: "Forbidden",
+              message: "شما اجازه دسترسی به این بخش را ندارید.",
+            },
+            404: {
+              code: "404",
+              title: "صفحه مورد نظر یافت نشد",
+              titleEn: "Not Found",
+              message:
+                "صفحه‌ای که به دنبال آن هستید وجود ندارد یا حذف شده است.",
+            },
+            500: {
+              code: "500",
+              title: "خطای داخلی سرور",
+              titleEn: "Internal Server Error",
+              message:
+                "متأسفانه خطایی در سرور رخ داده است. لطفا بعدا مجددا تلاش کنید.",
+            },
+            503: {
+              code: "503",
+              title: "سرویس در دسترس نیست",
+              titleEn: "Service Unavailable",
+              message:
+                "سرویس موقتاً در دسترس نیست. لطفا چند دقیقه دیگر مجددا تلاش کنید.",
+            },
+          },
+
           init() {
-            // Get error code from URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const code = urlParams.get("code") || "404";
+            // ابتدا error رو null می‌کنیم تا حالت loading فعال باشد
+            this.error = null;
 
-            // Define error types
-            const errors = {
-              400: {
-                code: "400",
-                title: "درخواست نامعتبر",
-                titleEn: "Bad Request",
-                message:
-                  "درخواست ارسال شده معتبر نمی‌باشد. لطفا مجددا تلاش کنید.",
-              },
-              401: {
-                code: "401",
-                title: "عدم دسترسی",
-                titleEn: "Unauthorized",
-                message:
-                  "شما مجوز دسترسی به این بخش را ندارید. لطفا وارد حساب کاربری خود شوید.",
-              },
-              403: {
-                code: "403",
-                title: "دسترسی ممنوع",
-                titleEn: "Forbidden",
-                message: "شما اجازه دسترسی به این بخش را ندارید.",
-              },
-              404: {
-                code: "404",
-                title: "صفحه مورد نظر یافت نشد",
-                titleEn: "Not Found",
-                message:
-                  "صفحه‌ای که به دنبال آن هستید وجود ندارد یا حذف شده است.",
-              },
-              500: {
-                code: "500",
-                title: "خطای داخلی سرور",
-                titleEn: "Internal Server Error",
-                message:
-                  "متأسفانه خطایی در سرور رخ داده است. لطفا بعدا مجددا تلاش کنید.",
-              },
-              503: {
-                code: "503",
-                title: "سرویس در دسترس نیست",
-                titleEn: "Service Unavailable",
-                message:
-                  "سرویس موقتاً در دسترس نیست. لطفا چند دقیقه دیگر مجددا تلاش کنید.",
-              },
-            };
-
-            // Set error data after a small delay to show loading animation
-            setTimeout(() => {
-              this.error = errors[code] || errors["404"];
-              // Update page title
-              document.title = `${this.error.code} ${this.error.titleEn}`;
-            }, 500);
+            fetch(window.location.href, { method: "HEAD" })
+              .then((response) => {
+                const code = response.status.toString();
+                this.error = this.errors[code] || this.errors["404"];
+                // آپدیت عنوان صفحه
+                document.title = `${this.error.code} ${this.error.titleEn}`;
+              })
+              .catch(() => {
+                // در صورت بروز خطا، فرض می‌کنیم 404
+                this.error = this.errors["404"];
+                document.title = `404 Not Found`;
+              });
           },
         }));
       });

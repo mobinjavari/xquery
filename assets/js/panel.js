@@ -73,7 +73,7 @@ const copyUrl = () => {
 document.addEventListener('DOMContentLoaded', initPanel)
 
 document.addEventListener('DOMContentLoaded', () => {
-  const loginButton = document.querySelector('a[href="./panel.html?type=cpanel"]')
+  const loginButton = document.querySelector('a[href="./panel?type=cpanel"]')
   const dialog = document.getElementById('securityDialog')
   const loadingAnimation = document.getElementById('loadingAnimation')
   const errorIcon = document.getElementById('errorIcon')
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start redirect timer
     redirectTimeout = setTimeout(() => {
       if (!dialog.classList.contains('hidden')) {
-        window.location.href = './panel.html?type=cpanel'
+        window.location.href = './panel?type=cpanel'
       }
     }, 3000)
   }
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   continueBtn.addEventListener('click', () => {
-    window.location.href = './panel.html?type=cpanel'
+    window.location.href = './panel?type=cpanel'
   })
 
   cancelBtn.addEventListener('click', () => {
