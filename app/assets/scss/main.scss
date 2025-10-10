@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --background-color: theme("colors.primary.50");
+    --pattern-x: url("/svg/x-black.svg");
+    --focus-outline: theme("colors.theme.900");
+    --selection-bg: theme("colors.theme.300");
+    --selection-color: theme("colors.theme.950");
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --page-bg: theme("colors.primary.950");
+      --pattern-x: url("/svg/x-white.svg");
+      --focus-outline: theme("colors.theme.200");
+      --selection-bg: theme("colors.theme.700");
+      --selection-color: theme("colors.theme.50");
+    }
+  }
+
+  html,
+  body {
+    @apply min-h-screen overflow-x-hidden;
+    background-color: var(--page-bg) !important;
+  }
+
+  a,
+  svg,
+  img {
+    -webkit-user-drag: none;
+    user-select: none;
+  }
+
+  :focus-visible {
+    border-radius: 6px;
+    outline: 4px solid var(--focus-outline);
+  }
+
+  ::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-color);
+  }
+
+  .pattern-x {
+    background-image: var(--pattern-x);
+  }
+
+  .pattern-grid {
+    background-image: url("/svg/grid.svg");
+  }
+}
