@@ -45,12 +45,13 @@
           </li>
         </ul>
         <div class="mt-10 flex items-center gap-x-4">
-          <a :href="rt(plan.orderLink)" :class="[
-            'flex-1 block rounded-xl px-4 py-2.5 text-center text-sm font-semibold transition-colors duration-300',
-            plan.isPrimary
-              ? 'bg-theme-50 text-theme-700 hover:bg-theme-100'
-              : 'bg-theme-600 text-theme-50 hover:bg-theme-700 dark:hover:bg-theme-500'
-          ]">
+          <a :href="rt(plan.orderLink).startsWith('http') ? rt(plan.orderLink) : $localePath(rt(plan.orderLink))"
+            :class="[
+              'flex-1 block rounded-xl px-4 py-2.5 text-center text-sm font-semibold transition-colors duration-300',
+              plan.isPrimary
+                ? 'bg-theme-50 text-theme-700 hover:bg-theme-100'
+                : 'bg-theme-600 text-theme-50 hover:bg-theme-700 dark:hover:bg-theme-500'
+            ]">
             {{ t(`landing.${id}.order`) }} {{ rt(plan.name) }}
           </a>
         </div>
