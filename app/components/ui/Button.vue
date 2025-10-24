@@ -5,7 +5,7 @@
 
         <span v-if="shaild" class="absolute inset-0 pointer-events-none overflow-hidden">
             <span
-                class="absolute ltr:-left-[100%] rtl:-right-[100%] top-0 w-1/2 h-full bg-white opacity-20 transform -skew-x-12 ltr:group-hover:translate-x-[200%] rtl:group-hover:-translate-x-[600%] transition-transform duration-700 ease-in-out"></span>
+                class="absolute ltr:-left-[100%] rtl:-right-[100%] top-0 w-1/2 h-full bg-white opacity-20 transform -skew-x-12 ltr:group-hover:translate-x-[600%] rtl:group-hover:-translate-x-[600%] transition-transform duration-700 ease-in-out"></span>
         </span>
 
         <span class="relative flex items-center gap-x-2 z-10">
@@ -16,7 +16,6 @@
 </template>
 
 <script setup>
-const { cs } = useIcons()
 const props = defineProps({
     icon: Object | String,
     to: {
