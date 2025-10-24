@@ -46,7 +46,7 @@ export function useSeo({title = '', rawTitle = '', description = '', keywords = 
       { property: 'og:site_name', content: t('name') },
       { property: 'og:locale', content: currentLocale.iso },
       { property: 'og:image', content: image },
-      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:url', content: url },
       { name: 'twitter:title', content: title },
       { name: 'twitter:description', content: description },
