@@ -16,7 +16,8 @@ export default {
   },
   landing: {
     title: "Yazılım Geliştirme ve Programlama Ekibi",
-    desc: "xQuery ekibi tarafından özel yazılım geliştirme, web tasarımı ve uygulama geliştirme hizmetleri sunulmaktadır.",
+    desc: "xQuery ekibi tarafından özel programlama, web tasarımı, uygulama geliştirme, sistem geliştirme, otomasyon ve bakım hizmetleri sağlanmaktadır.",
+    keywords: "xQuery, programlama, yazılım geliştirme, web tasarımı, uygulama geliştirme, programlama hizmetleri, geliştirme ekibi, yazılım projeleri, xQuery ekibi, xQuery team",
     hero: {
       title: "Merhaba, ben xQuery!",
       desc: "Ben yorulmayan zeki bir robotum ve her zaman işinizi optimize etmek ve otomatikleştirmek için hazır durumdayım. Beni edinmek için sadece geliştiricimle iletişime geçmeniz yeterli!",

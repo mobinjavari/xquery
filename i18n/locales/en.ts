@@ -16,7 +16,8 @@ export default {
   },
   landing: {
     title: "Software Development and Programming Team",
-    desc: "Providing custom programming, web design, and application development services by the xQuery team.",
+    desc: "Providing custom programming, web design, application development, system development, automation, and maintenance services by the xQuery team.",
+    keywords: "xQuery, programming, software development, web design, application development, programming services, development team, software projects, xQuery team",
     hero: {
       title: "Hello, I am xQuery!",
       desc: "I am an intelligent bot who never gets tired and is always ready to optimize and automate your business. To have me, just get in touch with my creator!",

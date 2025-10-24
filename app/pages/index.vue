@@ -26,5 +26,5 @@ import Tools from '@/components/landing/Tools.vue';
 import FAQ from '@/components/landing/FAQ.vue';
 
 const { t } = useI18n()
-useSeo({ title: t('landing.title'), description: t('landing.desc') })
+useSeo({ title: t('landing.title'), description: t('landing.desc'), keywords: t('landing.keywords') })
 </script>
