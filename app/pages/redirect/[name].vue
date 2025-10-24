@@ -6,8 +6,8 @@
             class="relative w-full max-w-md sm:max-w-lg md:max-w-xl p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl backdrop-blur-xl border border-theme-200/40 dark:border-theme-800/60 bg-white/40 dark:bg-theme-900/60 shadow-2xl transition-colors duration-500">
 
             <div
-                class="absolute -top-8 sm:-top-10 left-1/2 transform -translate-x-1/2 bg-theme-600 dark:bg-theme-500 text-theme-50 w-16 h-16 flex items-center justify-center rounded-full shadow-lg">
-                <component :is="cs(rt(redirect.icon))" class="w-8 h-8" />
+                class="absolute -top-8 sm:-top-10 left-1/2 transform -translate-x-1/2 bg-theme-600 dark:bg-theme-500 text-theme-50 w-20 h-20 flex items-center justify-center rounded-full shadow-lg">
+                <component :is="cs(rt(redirect.icon))" class="w-12 h-12" />
             </div>
 
             <h1
