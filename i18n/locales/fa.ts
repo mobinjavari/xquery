@@ -296,8 +296,6 @@ export default {
     }
   },
   redirects: {
-    goNow: "هدایت فوری",
-    timer: "شما پس از %sec% ثانیه به مقصد هدایت خواهید شد.",
     items: [
       {
           id: 'whm',
@@ -305,7 +303,8 @@ export default {
           desc: 'با WHM می‌توانید چندین حساب cPanel را مدیریت کنید، منابع سرور را زیر نظر داشته باشید و تنظیمات امنیتی و دامنه‌ها را به راحتی کنترل کنید.',
           url: 'https://whm.xquery.ir',
           icon: 'LayersIcon',
-          delay: 15
+          delay: 15,
+          open: 'باز کردن WHM'
       },
       {
           id: 'cpanel',
@@ -313,7 +312,8 @@ export default {
           desc: 'cPanel به شما اجازه می‌دهد فایل‌ها، ایمیل‌ها، پایگاه داده‌ها و دامنه‌های خود را به ساده‌ترین شکل مدیریت کنید و کنترل کامل روی برنامه/وب‌سایت خود داشته باشید.',
           url: 'https://cpanel.xquery.ir',
           icon: 'MonitorIcon',
-          delay: 15
+          delay: 15,
+          open: 'باز کردن cPanel'
       },
       {
           id: 'telegram-channel',
@@ -328,7 +328,8 @@ export default {
           ],
           icon: 'TelegramIcon',
           url: 'https://t.me/xQueryTeam',
-          delay: 15
+          delay: 15,
+          open: 'رفتن به کانال'
       },
       {
           id: 'telegram-support',
@@ -342,8 +343,9 @@ export default {
               'دریافت راهنمایی و حل مشکلات فنی به صورت سریع و مستقیم'
           ],
           icon: 'TelegramIcon',
-          url: 'https://t.me/xQueryTeam',
-          delay: 15
+          url: 'https://t.me/xQueryTeam?direct',
+          delay: 15,
+          open: 'رفتن به تلگرام'
       },
       {
           id: 'email-support',
@@ -357,7 +359,8 @@ export default {
           ],
           icon: 'MailBoxIcon',
           url: 'mailto:support[.]xquery.ir',
-          delay: 15
+          delay: 15,
+          open: 'ارسال ایمیل'
       }
     ]
   },

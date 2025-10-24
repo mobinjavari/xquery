@@ -25,7 +25,7 @@ const props = defineProps({
     shaild: Boolean,
     target: {
         type: String,
-        default: 'blank'
+        default: 'self'
     }
 })
 </script>

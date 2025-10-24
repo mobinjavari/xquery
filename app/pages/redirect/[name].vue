@@ -30,14 +30,10 @@
             </ul>
 
             <div class="text-center">
-                <Button @click="goNow"
+                <Button @click="openUrl()"
                     class="rounded-2xl bg-theme-600 text-theme-50 font-semibold hover:bg-theme-700 dark:bg-theme-500 dark:hover:bg-theme-400 shadow-md hover:shadow-lg transition-colors duration-300">
-                    {{ t('redirects.goNow') }}
+                    {{ rt(redirect.open) }}
                 </Button>
-
-                <p class="text-xs sm:text-sm text-theme-800/60 dark:text-theme-400 mt-4 sm:mt-5">
-                    {{ t('redirects.timer').replace('%sec%', countdown) }}
-                </p>
             </div>
         </div>
     </div>
@@ -55,28 +51,15 @@ const route = useRoute()
 const { t, tm, rt } = useI18n()
 const redirects = tm('redirects.items')
 const redirect = ref(null)
-const countdown = ref(0)
 const { cs } = useIcons()
-let timer = null
 
-const goNow = () => { countdown.value = 2 }
+const openUrl = () => {
+    window.open(rt(redirect.value.url), '_blank')
+    window.history.back()
+}
 
 onMounted(() => {
     const id = route.params.name
     redirect.value = redirects.find(r => rt(r.id) === id)
-
-    if (redirect.value) {
-        useSeo({ title: rt(redirect.value.title), description: rt(redirect.value.desc) })
-        countdown.value = redirect.value.delay
-        timer = setInterval(() => {
-            countdown.value--
-            if (countdown.value <= 0) {
-                clearInterval(timer)
-                window.location.href = rt(redirect.value.url)
-            }
-        }, 1000)
-    } else {
-        window.close()
-    }
 })
 </script>
