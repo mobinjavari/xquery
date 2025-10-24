@@ -296,8 +296,6 @@ export default {
     }
   },
   redirects: {
-    goNow: "Hemen Git",
-    timer: "%sec% saniye içinde yönlendirileceksiniz.",
     items: [
       {
           id: 'whm',
@@ -305,7 +303,8 @@ export default {
           desc: 'WHM ile birden fazla cPanel hesabını yönetebilir, sunucu kaynaklarını takip edebilir ve güvenlik/dns ayarlarını kontrol edebilirsiniz.',
           url: 'https://whm.example.org',
           icon: 'LayersIcon',
-          delay: 15
+          delay: 15,
+          open: 'WHM\'ye Git'
       },
       {
           id: 'cpanel',
@@ -313,7 +312,8 @@ export default {
           desc: 'cPanel ile dosyalarınızı, e-postalarınızı, veritabanlarınızı ve domainlerinizi kolayca yönetebilirsiniz.',
           url: 'https://cpanel.example.org',
           icon: 'MonitorIcon',
-          delay: 15
+          delay: 15,
+          open: 'cPanel\'e Git'
       },
       {
           id: 'telegram-channel',
@@ -327,7 +327,8 @@ export default {
           ],
           icon: 'TelegramIcon',
           url: 'https://t.me/username',
-          delay: 15
+          delay: 15,
+          open: 'Kanala Git'
       },
       {
           id: 'telegram-support',
@@ -342,7 +343,8 @@ export default {
           ],
           icon: 'TelegramIcon',
           url: 'https://t.me/username',
-          delay: 15
+          delay: 15,
+          open: 'Telegram\'a Git'
       },
       {
           id: 'email-support',
@@ -356,7 +358,8 @@ export default {
           ],
           icon: 'MailBoxIcon',
           url: 'mailto:support[.]example.org',
-          delay: 15
+          delay: 15,
+          open: 'E-posta Gönder'
       }
     ]
   },

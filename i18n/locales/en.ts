@@ -296,8 +296,6 @@ export default {
     }
   },
   redirects: {
-    goNow: "Go Now",
-    timer: "You will be redirected to the destination in %sec% seconds.",
     items: [
       {
           id: 'whm',
@@ -305,7 +303,8 @@ export default {
           desc: 'With WHM, you can manage multiple cPanel accounts, monitor server resources, and easily control security and domain settings.',
           url: 'https://whm.example.org',
           icon: 'LayersIcon',
-          delay: 15
+          delay: 15,
+          open: 'Open WHM'
       },
       {
           id: 'cpanel',
@@ -313,7 +312,8 @@ export default {
           desc: 'cPanel allows you to manage files, emails, databases, and domains in the simplest way and have full control over your apps/websites.',
           url: 'https://cpanel.example.org',
           icon: 'MonitorIcon',
-          delay: 15
+          delay: 15,
+          open: 'Open cPanel'
       },
       {
           id: 'telegram-channel',
@@ -327,7 +327,8 @@ export default {
           ],
           icon: 'TelegramIcon',
           url: 'https://t.me/username',
-          delay: 15
+          delay: 15,
+          open: 'Go to Channel'
       },
       {
           id: 'telegram-support',
@@ -342,7 +343,8 @@ export default {
           ],
           icon: 'TelegramIcon',
           url: 'https://t.me/username',
-          delay: 15
+          delay: 15,
+          open: 'Go to Telegram'
       },
       {
           id: 'email-support',
@@ -356,7 +358,8 @@ export default {
           ],
           icon: 'MailBoxIcon',
           url: 'mailto:support[.]example.org',
-          delay: 15
+          delay: 15,
+          open: 'Send Email'
       }
     ]
   },
