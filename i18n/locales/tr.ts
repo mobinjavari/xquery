@@ -6,7 +6,7 @@ interface LandingSection {
 }
 
 export default {
-  name: "xQuery",
+  name: "xQuery Ekibi",
   header: {
     login: {
       text: "Panel Girişi",

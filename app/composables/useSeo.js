@@ -29,8 +29,8 @@ export function useSeo({title = '', rawTitle = '', description = '', keywords = 
     tagPosition: 'head'
   }
 
-  title = (rawTitle ? rawTitle : title) + ' | xQuery'
-  keywords = keywords ? keywords : 'xQuery'
+  title = (rawTitle ? rawTitle : title) + ' | xQuery Team'
+  keywords = keywords ? keywords : 'xQuery Team'
   image = image ? image : `${website}/images/thumbnail/thumbnail.jpg`
 
   useHead({

@@ -6,7 +6,7 @@ interface LandingSection {
 }
 
 export default {
-  name: "xQuery",
+  name: "xQuery Team",
   header: {
     login: {
       text: "Login to Panel",

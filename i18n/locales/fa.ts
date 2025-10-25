@@ -6,7 +6,7 @@ interface LandingSection {
 }
 
 export default {
-  name: "ایکس‌کوئری",
+  name: "تیم ایکس‌کوئری",
   header: {
     login: {
       text: "ورود به پنل",
