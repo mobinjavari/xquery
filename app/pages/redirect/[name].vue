@@ -47,7 +47,6 @@ import Button from '@/components/ui/Button.vue'
 
 definePageMeta({ layout: false })
 
-const route = useRoute()
 const { t, tm, rt } = useI18n()
 const redirects = tm('redirects.items')
 const redirect = ref(null)
@@ -59,7 +58,13 @@ const openUrl = () => {
 }
 
 onMounted(() => {
+    const route = useRoute()
     const id = route.params.name
     redirect.value = redirects.find(r => rt(r.id) === id)
+
+    useSeo({
+        title: rt(redirect.value.title),
+        description: rt(redirect.value.desc),
+    })
 })
 </script>
