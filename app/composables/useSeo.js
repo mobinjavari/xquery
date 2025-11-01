@@ -3,8 +3,10 @@ import { useHead } from '#imports'
 export function useSeo({title = '', rawTitle = '', description = '', keywords = '', path = '', image = ''}) {
   const website = 'https://xquery.ir'
   const { t, locale, locales } = useI18n()
+  const { $i18n } = useNuxtApp()
   const currentLocale = locales.value.find(l => l.code === locale.value)
-  const url = `${website}/${currentLocale.code}/${path}`
+  const route = useRoute()
+  const url = `${website}${route.path}`
   const schema = {
     type: 'application/ld+json', 
     innerHTML: JSON.stringify([
@@ -54,7 +56,9 @@ export function useSeo({title = '', rawTitle = '', description = '', keywords = 
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
       { name: 'mobile-web-app-capable', content: 'yes' }
     ],
-    script: [ path ? {} : schema ],
+    script: [ 
+      route.path == '/' + currentLocale.code ? schema : {} 
+    ],
     link: [
       { rel: 'canonical', href: url },
       { rel: 'manifest', href: '/manifest.json', crossorigin: 'use-credentials'},
@@ -74,7 +78,8 @@ export function useSeo({title = '', rawTitle = '', description = '', keywords = 
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/16.png' },
       ...locales.value.map(l => (
         { rel: 'alternate', hreflang: l.code, href: url.replace(currentLocale.code, l.code) }
-      ))
+      )),
+      { rel: 'alternate', hreflang: 'x-default', href: url.replace(currentLocale.code, $i18n.defaultLocale) }
     ]
   })
 }
