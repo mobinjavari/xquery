@@ -25,7 +25,7 @@
             </template>
         </div>
     </section>
-    <AnimatedDivider />
+    <AnimatedDivider v-if="divider" />
 </template>
 
 <script setup>
@@ -38,6 +38,10 @@ const props = defineProps({
         type: Number,
         default: 0,
     },
-    pattern: Boolean
+    pattern: Boolean,
+    divider: {
+        type: Boolean,
+        default: true
+    }
 })
 </script>

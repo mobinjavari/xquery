@@ -1,5 +1,5 @@
 <template>
-    <div v-for="(shape, i) in shapes" :key="i"
+    <div v-for="(shape, i) in shapes" :key="i" v-if="i < count"
         class="absolute inset-x-0 top-0 transform-gpu overflow-hidden blur-3xl -z-10 pointer-events-none"
         :style="{ top: shape.top }" aria-hidden="true">
         <div class="relative -translate-x-1/2 aspect-[1155/678] opacity-50 dark:opacity-30"
@@ -47,6 +47,13 @@
 </style>
 
 <script setup>
+defineProps({
+    count: {
+        type: Number,
+        default: 4
+    }
+})
+
 const defaultClipPath = `polygon(
   74.1% 44.1%,100% 61.6%,97.5% 26.9%,85.5% 0.1%,80.7% 2%,
   72.5% 32.5%,60.2% 62.4%,52.4% 68.1%,47.5% 58.3%,45.2% 34.5%,
@@ -70,21 +77,21 @@ const shapes = [
         animate: 'animate-float-reverse',
         clipPath: defaultClipPath
     },
-    // {
-    //     top: '66%',
-    //     sideClass: 'right-[calc(50%-3rem)]',
-    //     widthClass: 'w-[36.125rem] sm:w-[72.1875rem]',
-    //     backgroundClass: 'bg-theme-900 dark:bg-theme-300',
-    //     animate: 'animate-float-reverse',
-    //     clipPath: defaultClipPath
-    // },
-    // {
-    //     top: '88%',
-    //     sideClass: 'left-[calc(50%+3rem)] sm:left-[calc(50%+36rem)]',
-    //     widthClass: 'w-[36.125rem] sm:w-[72.1875rem]',
-    //     backgroundClass: 'bg-theme-900 dark:bg-theme-300',
-    //     animate: 'animate-float-reverse',
-    //     clipPath: defaultClipPath
-    // }
+    {
+        top: '66%',
+        sideClass: 'right-[calc(50%-3rem)]',
+        widthClass: 'w-[36.125rem] sm:w-[72.1875rem]',
+        backgroundClass: 'bg-theme-900 dark:bg-theme-300',
+        animate: 'animate-float-reverse',
+        clipPath: defaultClipPath
+    },
+    {
+        top: '88%',
+        sideClass: 'left-[calc(50%+3rem)] sm:left-[calc(50%+36rem)]',
+        widthClass: 'w-[36.125rem] sm:w-[72.1875rem]',
+        backgroundClass: 'bg-theme-900 dark:bg-theme-300',
+        animate: 'animate-float-reverse',
+        clipPath: defaultClipPath
+    }
 ]
 </script>
