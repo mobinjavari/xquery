@@ -1,6 +1,6 @@
 <template>
     <div v-for="(shape, i) in shapes" :key="i">
-        <div v-if="i <= count"
+        <div v-if="i < count"
             class="absolute inset-x-0 top-0 transform-gpu overflow-hidden blur-3xl -z-10 pointer-events-none"
             :style="{ top: shape.top }" aria-hidden="true">
             <div class="relative -translate-x-1/2 aspect-[1155/678] opacity-50 dark:opacity-30"

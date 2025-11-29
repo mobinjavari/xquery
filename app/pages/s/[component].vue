@@ -4,6 +4,11 @@ import { useRoute } from 'vue-router'
 import { createError } from '#app'
 import AnimatedDivider from '@/components/ui/AnimatedDivider.vue'
 
+definePageMeta({
+    layout: 'default',
+    animatedBackground: 1
+})
+
 const route = useRoute()
 const param = (route.params.component || '').toString().toLocaleLowerCase()
 
@@ -32,7 +37,7 @@ function getComponent(name: string) {
     if (!component) {
         throw createError({
             statusCode: 404,
-            statusMessage: 'صفحه یافت نشد'
+            statusMessage: 'Page Not Found'
         })
     }
 
