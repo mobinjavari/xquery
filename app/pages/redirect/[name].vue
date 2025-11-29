@@ -39,7 +39,6 @@
     </div>
 </template>
 
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
@@ -61,6 +60,13 @@ onMounted(() => {
     const route = useRoute()
     const id = route.params.name
     redirect.value = redirects.find(r => rt(r.id) === id)
+
+    if (!redirect.value) {
+        throw createError({
+            statusCode: 404,
+            statusMessage: 'Page Not Found'
+        })
+    }
 
     useSeo({
         title: rt(redirect.value.title),
