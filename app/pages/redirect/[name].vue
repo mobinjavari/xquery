@@ -52,8 +52,15 @@ const redirect = ref(null)
 const { cs } = useIcons()
 
 const openUrl = () => {
-    window.open(rt(redirect.value.url), '_blank')
-    window.history.back()
+    const url = rt(redirect.value.url).replace('[.]', '@')
+    const newWindow = window.open(url, '_blank')
+    if (newWindow) {
+        setTimeout(() => {
+            window.history.back()
+        }, 100)
+    } else {
+        alert('Popup blocked! Please allow popups for this site.')
+    }
 }
 
 onMounted(() => {
