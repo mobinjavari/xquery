@@ -23,14 +23,14 @@ export default {
       desc: "من یک ربات هوشمندم که هیچ‌وقت خسته نمی‌شم و همیشه آماده‌ام تا با قدرت، کسب‌وکار شما رو بهینه‌سازی و خودکارسازی کنم. برای داشتن من، فقط کافیه با سازنده‌م در ارتباط باشید!",
       buttons: [
         {
-          text: "کانال تلگرام",
-          to: '/redirect/telegram-channel',
-          icon: 'TelegramIcon',
+          text: "کانال بله",
+          to: '/redirect/bale-channel',
+          icon: 'BaleIcon',
           isPrimary: true,
         },
         {
           text: "درخواست مشاوره",
-          to: '/redirect/telegram-support',
+          to: '/redirect/bale-channel',
           icon: 'MessageIcon',
           isPrimary: false,
         },
@@ -143,7 +143,7 @@ export default {
             'پشتیبانی ۱۲/۷',
             'بکاپ روزانه'
           ],
-          orderLink: '/redirect/telegram-support'
+          // orderLink: '/redirect/telegram-support'
         },
         {
           name: 'پلن حرفه‌ای',
@@ -158,7 +158,7 @@ export default {
             'پشتیبانی ۱۲/۷',
             'بکاپ روزانه + هفتگی',
           ],
-          orderLink: '/redirect/telegram-support'
+          // orderLink: '/redirect/telegram-support'
         },
         {
           name: 'پلن سازمانی',
@@ -172,7 +172,7 @@ export default {
             'پشتیبانی VIP ۱۲/۷',
             'بکاپ روزانه + هفتگی + ماهانه',
           ],
-          orderLink: '/redirect/telegram-support'
+          // orderLink: '/redirect/telegram-support'
         }
       ]
     },
@@ -303,7 +303,6 @@ export default {
           desc: 'با WHM می‌توانید چندین حساب cPanel را مدیریت کنید، منابع سرور را زیر نظر داشته باشید و تنظیمات امنیتی و دامنه‌ها را به راحتی کنترل کنید.',
           url: 'https://whm.example.org',
           icon: 'LayersIcon',
-          delay: 15,
           open: 'باز کردن WHM'
       },
       {
@@ -312,7 +311,6 @@ export default {
           desc: 'cPanel به شما اجازه می‌دهد فایل‌ها، ایمیل‌ها، پایگاه داده‌ها و دامنه‌های خود را به ساده‌ترین شکل مدیریت کنید و کنترل کامل روی برنامه/وب‌سایت خود داشته باشید.',
           url: 'https://cpanel.example.org',
           icon: 'MonitorIcon',
-          delay: 15,
           open: 'باز کردن cPanel'
       },
       {
@@ -328,7 +326,6 @@ export default {
           ],
           icon: 'TelegramIcon',
           url: 'https://t.me/username',
-          delay: 15,
           open: 'رفتن به کانال'
       },
       {
@@ -344,7 +341,6 @@ export default {
           ],
           icon: 'TelegramIcon',
           url: 'https://t.me/username?direct',
-          delay: 15,
           open: 'رفتن به تلگرام'
       },
       {
@@ -359,7 +355,6 @@ export default {
         ],
         icon: 'BaleIcon',
         url: 'https://ble.ir/username',
-        delay: 15,
         open: 'رفتن به کانال'
       },
       {
@@ -374,7 +369,6 @@ export default {
           ],
           icon: 'MailBoxIcon',
           url: 'mailto:support[.]example.org',
-          delay: 15,
           open: 'ارسال ایمیل'
       }
     ]
@@ -392,10 +386,15 @@ export default {
       text: "ارتباط با ما",
       items: [
         {
-          icon: 'TelegramIcon',
-          text: 'کانال تلگرام',
-          to: "/redirect/telegram-channel",
+          icon: 'BaleIcon',
+          text: 'کانال بله',
+          to: "/redirect/bale-channel",
         },
+        // {
+        //   icon: 'TelegramIcon',
+        //   text: 'کانال تلگرام',
+        //   to: "/redirect/telegram-channel",
+        // },
         {
           icon: 'MailBoxIcon',
           text: 'ایمیل پشتیبانی',
