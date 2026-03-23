@@ -347,6 +347,21 @@ export default {
           open: 'Telegram\'a Git'
       },
       {
+          id: "bale-channel",
+          title: "Bale Kanalı",
+          desc: "xQuery Bale kanalında en son haberleri, güncellemeleri ve özel fırsatları takip edebilirsiniz.",
+          items: [
+            "Anlık haberler ve önemli duyuruları alın",
+            "Güncellemeler ve hizmet değişikliklerine erişin",
+            "Kullanıcılara özel şart ve teklifleri görüntüleyin",
+            "Hizmetlerle ilgili eğitimler ve teknik ipuçları alın"
+          ],
+          icon: "BaleIcon",
+          url: "https://ble.ir/username",
+          delay: 15,
+          open: "Kanala Git"
+      },
+      {
           id: 'email-support',
           title: 'E-posta Desteği',
           desc: 'Sorularınızı ve önerilerinizi e-posta ile bize gönderebilirsiniz.',

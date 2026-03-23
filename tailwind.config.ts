@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        theme: colors.orange,
+        theme: colors.teal,
         primary: {
           50: "#ffffff",
           100: "#f9fafb",

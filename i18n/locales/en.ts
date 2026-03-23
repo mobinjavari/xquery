@@ -347,6 +347,21 @@ export default {
           open: 'Go to Telegram'
       },
       {
+          id: "bale-channel",
+          title: "Bale Channel",
+          desc: "On the xQuery Bale channel, you can follow the latest news, updates, and special offers.",
+          items: [
+              "Receive breaking news and important announcements",
+              "Access updates and service changes",
+              "View special conditions and user offers",
+              "Get tutorials and technical tips related to services"
+          ],
+          icon: 'BaleIcon',
+          url: 'https://ble.ir/username',
+          delay: 15,
+          open: 'Go to Channel'
+      },
+      {
           id: 'email-support',
           title: 'Email Support',
           desc: 'Send your feedback and suggestions to us via email.',
