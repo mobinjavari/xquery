@@ -2,8 +2,9 @@
     <ContentSection :translation="`landing.${id}`">
         <div class="m-auto w-full max-w-2xl">
             <div v-for="(faq, index) in tm(`landing.${id}.items`)" :key="index" class="group">
-                <button @click="selected = selected === index ? null : index"
-                    class="flex w-full items-center justify-between py-6 text-right">
+                <button
+class="flex w-full items-center justify-between py-6 text-right"
+                    @click="selected = selected === index ? null : index">
                     <span class="text-lg font-medium">
                         {{ rt(faq.question) }}
                     </span>

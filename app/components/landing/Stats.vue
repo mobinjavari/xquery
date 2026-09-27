@@ -1,7 +1,8 @@
 <template>
     <ContentSection :translation="`landing.${id}`" pattern>
         <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
-            <div v-for="stat in stats" :key="rt(stat.label)" ref="statRefs"
+            <div
+v-for="stat in stats" :key="rt(stat.label)" ref="statRefs"
                 class="mx-auto flex max-w-xs flex-col gap-y-4">
                 <dt class="text-base leading-7 text-theme-700 dark:text-theme-200">
                     {{ rt(stat.label) }}
