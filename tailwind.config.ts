@@ -1,10 +1,19 @@
-import colors from "tailwindcss/colors"
+type OpacityContext = { opacityValue?: string }
+
+const withOpacityValue = (variable: string) => ({ opacityValue }: OpacityContext) =>
+  opacityValue === undefined ? `rgb(var(${variable}))` : `rgb(var(${variable}) / ${opacityValue})`
+
+const THEME_SHADES = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
+
+const theme = Object.fromEntries(
+  THEME_SHADES.map((shade) => [shade, withOpacityValue(`--color-theme-${shade}`)])
+)
 
 export default {
   theme: {
     extend: {
       colors: {
-        theme: colors.teal,
+        theme,
         primary: {
           50: "#ffffff",
           100: "#f9fafb",

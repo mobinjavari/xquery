@@ -8,6 +8,9 @@
 <script setup>
 import LoadingOverlay from '@/components/ui/LoadingOverlay.vue';
 import { useLoading } from '@/composables/useLoading';
+import { useMonthlyTheme } from '@/composables/useMonthlyTheme';
+
+useMonthlyTheme();
 
 const { loading } = useLoading();
 

@@ -5,11 +5,11 @@
 @layer base {
   :root {
     color-scheme: light;
-    --background-color: theme("colors.primary.50");
+    --page-bg: theme("colors.primary.50");
     --pattern-x: url("/svg/x-black.svg");
-    --focus-outline: theme("colors.theme.900");
-    --selection-bg: theme("colors.theme.300");
-    --selection-color: theme("colors.theme.950");
+    --focus-outline: rgb(var(--color-theme-900));
+    --selection-bg: rgb(var(--color-theme-300));
+    --selection-color: rgb(var(--color-theme-950));
   }
 
   @media (prefers-color-scheme: dark) {
@@ -17,9 +17,9 @@
       color-scheme: dark;
       --page-bg: theme("colors.primary.950");
       --pattern-x: url("/svg/x-white.svg");
-      --focus-outline: theme("colors.theme.200");
-      --selection-bg: theme("colors.theme.700");
-      --selection-color: theme("colors.theme.50");
+      --focus-outline: rgb(var(--color-theme-200));
+      --selection-bg: rgb(var(--color-theme-700));
+      --selection-color: rgb(var(--color-theme-50));
     }
   }
 
