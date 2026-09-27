@@ -5,7 +5,7 @@
                 <dt class="text-lg font-semibold leading-7 text-theme-900 dark:text-theme-100">
                     <div
                         class="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-6 bg-theme-700 text-theme-50 dark:bg-theme-500 dark:text-theme-50">
-                        <component :is="cs(rt(feature.icon))" class="size-7" />
+                        <component :is="resolveIcon(rt(feature.icon))" class="size-7" />
                     </div>
                     {{ rt(feature.title) }}
                 </dt>
@@ -23,5 +23,5 @@ import useIcons from '@/composables/useIcons'
 
 const id = 'whyus'
 const { tm, rt } = useI18n()
-const { cs } = useIcons()
+const { resolveIcon } = useIcons()
 </script>

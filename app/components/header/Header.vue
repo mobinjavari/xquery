@@ -8,7 +8,8 @@
                 </a>
             </div>
             <div class="lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 items-center">
-                <Button :to="t('header.login.to')" :icon="cs(t('header.login.icon'))" shaild
+                <Button
+:to="t('header.login.to')" :icon="resolveIcon(t('header.login.icon'))" shine
                     class="bg-theme-600 text-theme-50 dark:bg-theme-500">
                     {{ t('header.login.text') }}
                 </Button>
@@ -22,5 +23,5 @@ import Button from '@/components/ui/Button.vue';
 import LogoIcon from '@/components/icons/LogoIcon.vue'
 
 const { t } = useI18n()
-const { cs } = useIcons()
+const { resolveIcon } = useIcons()
 </script>

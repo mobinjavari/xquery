@@ -5,13 +5,16 @@
 				<dl class="text-center flex flex-col items-center justify-center rounded-2xl p-8">
 					<dt>
 						<div class="relative flex items-center justify-center">
-							<div class="relative z-10 p-3 rounded-full size-16 flex items-center justify-center 
+							<div
+class="relative z-10 p-3 rounded-full size-16 flex items-center justify-center 
 										bg-theme-200/50 border border-theme-500/50 dark:bg-theme-50/80 dark:border-none">
-								<component :is="cs(rt(feature.icon))"
+								<component
+:is="resolveIcon(rt(feature.icon))"
 									class="size-8 text-theme-900 dark:text-theme-900" />
 							</div>
-							<span v-for="n in 2" :key="n" :style="{ animationDelay: (n - 1) + 's' }"
-								class="absolute z-5 top-1/2 left-1/2 size-20 rounded-full bg-theme-500/20 -translate-x-1/2 -translate-y-1/2 animate-ping-slow"></span>
+							<span
+v-for="n in 2" :key="n" :style="{ animationDelay: (n - 1) + 's' }"
+								class="absolute z-5 top-1/2 left-1/2 size-20 rounded-full bg-theme-500/20 -translate-x-1/2 -translate-y-1/2 animate-ping-slow"/>
 						</div>
 
 						<h3 class="text-lg mt-10 font-semibold">
@@ -33,7 +36,7 @@
 import ContentSection from '@/components/ui/ContentSection.vue'
 
 const id = 'features'
-const { cs } = useIcons()
+const { resolveIcon } = useIcons()
 const { tm, rt } = useI18n()
 </script>
 

@@ -8,8 +8,9 @@
                 {{ t(`landing.${id}.desc`) }}
             </p>
             <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Button v-for="btn in tm('landing.hero.buttons')" :to="rt(btn.to)" :key="rt(btn.text)"
-                    :shaild="btn.isPrimary" :icon="cs(rt(btn.icon))"
+                <Button
+v-for="btn in tm('landing.hero.buttons')" :key="rt(btn.text)" :to="rt(btn.to)"
+                    :shine="btn.isPrimary" :icon="resolveIcon(rt(btn.icon))"
                     :class="btn.isPrimary ? 'bg-theme-900' : 'bg-theme-700'" class="text-theme-50">
                     {{ rt(btn.text) }}
                 </Button>
@@ -23,6 +24,6 @@ import ContentSection from '@/components/ui/ContentSection.vue'
 import Button from '@/components/ui/Button.vue'
 
 const id = 'hero'
-const { cs } = useIcons()
+const { resolveIcon } = useIcons()
 const { t, tm, rt } = useI18n()
 </script>
