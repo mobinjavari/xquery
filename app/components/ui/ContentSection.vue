@@ -1,10 +1,12 @@
 <template>
-    <section :style="{ minHeight: offset ? `calc(100vh - ${offset}vh)` : '100vh' }" :class="pattern ? 'pattern-x' : ''"
+    <section
+:style="{ minHeight: offset ? `calc(100vh - ${offset}vh)` : '100vh' }" :class="pattern ? 'pattern-x' : ''"
         class="w-full grid place-items-center py-20 px-5">
         <div class="w-full mx-auto max-w-7xl">
             <template v-if="translation">
                 <div class="w-full mx-auto max-w-2xl text-center">
-                    <span v-if="te(`${translation}.subject`)"
+                    <span
+v-if="te(`${translation}.subject`)"
                         class="text-sm sm:text-md m-6 px-4 py-2 inline-block rounded-2xl duration-500 hover:scale-95 text-theme-50 bg-theme-600 dark:bg-theme-700">
                         {{ t(`${translation}.subject`) }}
                     </span>
@@ -32,8 +34,11 @@
 import AnimatedDivider from './AnimatedDivider.vue';
 
 const { t, te } = useI18n()
-const props = defineProps({
-    translation: String,
+defineProps({
+    translation: {
+        type: String,
+        default: ''
+    },
     offset: {
         type: Number,
         default: 0,

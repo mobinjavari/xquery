@@ -9,9 +9,6 @@ export default defineNuxtPlugin((nuxtApp) => {
 
     document.documentElement.setAttribute('dir', locale?.dir ?? 'ltr')
     document.documentElement.setAttribute('lang', lang)
-
-    // document.body.classList.remove('rtl', 'ltr')
-    // document.body.classList.add(dir)
   }
 
   nuxtApp.vueApp.mixin({

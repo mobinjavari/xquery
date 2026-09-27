@@ -1,5 +1,5 @@
 <template>
-	<Layout :header="false" :footer="false" :animatedBackground="1">
+	<Layout :header="false" :footer="false" :animated-background="1">
 		<ContentSection pattern :divider="false">
 			<div class=" flex-grow flex items-center justify-center">
 				<div
@@ -12,12 +12,12 @@
 						<h1 class="text-5xl font-black mb-3">
 							{{ error?.statusCode }}</h1>
 
-						<h2 class="text-2xl font-semibold mb-10 text-theme-900 dark:text-theme-300"
-							x-text="error.title">
+						<h2 class="text-2xl font-semibold mb-10 text-theme-900 dark:text-theme-300">
 							{{ error?.statusMessage }}
 						</h2>
 						<div class="flex flex-col sm:flex-row gap-4">
-							<Button to="/" :icon="HomeIcon" shaild
+							<Button
+to="/" :icon="HomeIcon" shine
 								class="text-theme-50 bg-theme-900 dark:bg-theme-500/50">
 								Back to home
 							</Button>
@@ -37,7 +37,10 @@ import HomeIcon from '@/components/icons/HomeIcon.vue'
 import Button from '@/components/ui/Button.vue'
 import Layout from '@/layouts/default.vue'
 
-const props = defineProps({
-	error: Object as () => NuxtError
+defineProps({
+	error: {
+		type: Object as () => NuxtError,
+		default: undefined
+	}
 })
 </script>

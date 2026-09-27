@@ -28,8 +28,7 @@ const componentMap: Record<string, string> = {
 const { t } = useI18n()
 useSeo({
     title: t(`landing.${param}.title`),
-    description: t(`landing.${param}.desc`),
-    path: param
+    description: t(`landing.${param}.desc`)
 })
 
 function getComponent(name: string) {
