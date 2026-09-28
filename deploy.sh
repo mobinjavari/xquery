@@ -2,11 +2,14 @@
 # Runs from .cpanel.yml after "Pull or Deploy", or manually to rebuild without a new pull.
 set -euo pipefail
 
-readonly APP_NAME="xquery"
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# cPanel mirrors the Application Root's full path (relative to $HOME) under
+# nodevenv/, not just its leaf folder name — e.g. an app at
+# ~/myapp gets its venv at ~/nodevenv/myapp/<version>.
+readonly APP_REL_PATH="${SCRIPT_DIR#"$HOME"/}"
 
 find_venv_activate() {
-  find "$HOME/nodevenv/$APP_NAME" -maxdepth 2 -name activate -print -quit 2>/dev/null
+  find "$HOME/nodevenv/$APP_REL_PATH" -maxdepth 2 -name activate -print -quit 2>/dev/null
 }
 
 build_app() {
@@ -14,7 +17,7 @@ build_app() {
   venv_activate=$(find_venv_activate)
 
   if [ -z "$venv_activate" ]; then
-    echo "No Node virtual environment found under $HOME/nodevenv/$APP_NAME" >&2
+    echo "No Node virtual environment found under $HOME/nodevenv/$APP_REL_PATH" >&2
     echo "Create the application once in cPanel -> Setup Node.js App, then deploy again." >&2
     exit 1
   fi
@@ -41,4 +44,4 @@ restart_app() {
 build_app
 restart_app
 
-echo "Done: $APP_NAME built and restarted"
+echo "Done: $APP_REL_PATH built and restarted"
