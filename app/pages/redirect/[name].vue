@@ -46,7 +46,9 @@ class="rounded-2xl bg-theme-600 text-theme-50 font-semibold hover:bg-theme-700 d
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { useRuntimeConfig } from '#imports'
 import Button from '@/components/ui/Button.vue'
+import { ensureHttps, formatBaleUrl, formatEmailUrl, formatTelegramUrl } from '@/utils/formatChannelUrl'
 
 definePageMeta({ layout: false })
 
@@ -54,9 +56,20 @@ const { tm, rt } = useI18n()
 const redirects = tm('redirects.items')
 const redirect = ref(null)
 const { resolveIcon } = useIcons()
+const route = useRoute()
+const config = useRuntimeConfig()
+
+const redirectUrls = {
+    whm: ensureHttps(config.public.whmHost),
+    cpanel: ensureHttps(config.public.cpanelHost),
+    'telegram-channel': formatTelegramUrl(config.public.telegramUsername),
+    'telegram-support': `${formatTelegramUrl(config.public.telegramUsername)}?direct`,
+    'bale-channel': formatBaleUrl(config.public.baleUsername),
+    'email-support': formatEmailUrl(config.public.supportEmail),
+}
 
 const openUrl = () => {
-    const url = rt(redirect.value.url).replace('[.]', '@')
+    const url = redirectUrls[route.params.name]
     const newWindow = window.open(url, '_blank')
     if (newWindow) {
         setTimeout(() => {
@@ -68,7 +81,6 @@ const openUrl = () => {
 }
 
 onMounted(() => {
-    const route = useRoute()
     const id = route.params.name
     redirect.value = redirects.find(r => rt(r.id) === id)
 

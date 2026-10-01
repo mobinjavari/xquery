@@ -301,7 +301,6 @@ export default {
           id: 'whm',
           title: 'WHM Yönetim Paneli',
           desc: 'WHM ile birden fazla cPanel hesabını yönetebilir, sunucu kaynaklarını takip edebilir ve güvenlik/dns ayarlarını kontrol edebilirsiniz.',
-          url: 'https://whm.example.org',
           icon: 'LayersIcon',
           open: 'WHM\'ye Git'
       },
@@ -309,7 +308,6 @@ export default {
           id: 'cpanel',
           title: 'cPanel Yönetim Paneli',
           desc: 'cPanel ile dosyalarınızı, e-postalarınızı, veritabanlarınızı ve domainlerinizi kolayca yönetebilirsiniz.',
-          url: 'https://cpanel.example.org',
           icon: 'MonitorIcon',
           open: 'cPanel\'e Git'
       },
@@ -324,7 +322,6 @@ export default {
               'Eğitim ve teknik ipuçları'
           ],
           icon: 'TelegramIcon',
-          url: 'https://t.me/username',
           open: 'Kanala Git'
       },
       {
@@ -339,7 +336,6 @@ export default {
               'Hızlı teknik yardım ve sorun çözümü'
           ],
           icon: 'TelegramIcon',
-          url: 'https://t.me/username',
           open: 'Telegram\'a Git'
       },
       {
@@ -353,7 +349,6 @@ export default {
             "Hizmetlerle ilgili eğitimler ve teknik ipuçları alın"
           ],
           icon: "BaleIcon",
-          url: "https://ble.ir/username",
           open: "Kanala Git"
       },
       {
@@ -367,7 +362,6 @@ export default {
               'Sorun çözümü için ek doküman ve bilgi gönderme'
           ],
           icon: 'MailBoxIcon',
-          url: 'mailto:support[.]example.org',
           open: 'E-posta Gönder'
       }
     ]

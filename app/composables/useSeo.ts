@@ -1,4 +1,5 @@
 import { useHead, useSeoMeta, useRuntimeConfig } from '#imports'
+import { formatTelegramUrl } from '@/utils/formatChannelUrl'
 
 interface SeoOptions {
   title?: string
@@ -9,7 +10,8 @@ interface SeoOptions {
 }
 
 export function useSeo({ title = '', rawTitle = '', description = '', keywords = '', image = '' }: SeoOptions) {
-  const website = useRuntimeConfig().public.siteUrl
+  const config = useRuntimeConfig()
+  const website = config.public.siteUrl
   const { t, locale, locales } = useI18n()
   const { $i18n } = useNuxtApp()
   const currentLocale = locales.value.find(l => l.code === locale.value)
@@ -65,7 +67,7 @@ export function useSeo({ title = '', rawTitle = '', description = '', keywords =
           'url': url,
           'logo': `${website}/favicons/1080.png`,
           'sameAs': [
-            'https://t.me/username'
+            formatTelegramUrl(config.public.telegramUsername)
           ]
         },
         {

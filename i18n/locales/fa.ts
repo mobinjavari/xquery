@@ -301,7 +301,6 @@ export default {
           id: 'whm',
           title: 'پنل مدیریت WHM',
           desc: 'با WHM می‌توانید چندین حساب cPanel را مدیریت کنید، منابع سرور را زیر نظر داشته باشید و تنظیمات امنیتی و دامنه‌ها را به راحتی کنترل کنید.',
-          url: 'https://whm.example.org',
           icon: 'LayersIcon',
           open: 'باز کردن WHM'
       },
@@ -309,7 +308,6 @@ export default {
           id: 'cpanel',
           title: 'پنل مدیریت cPanel',
           desc: 'cPanel به شما اجازه می‌دهد فایل‌ها، ایمیل‌ها، پایگاه داده‌ها و دامنه‌های خود را به ساده‌ترین شکل مدیریت کنید و کنترل کامل روی برنامه/وب‌سایت خود داشته باشید.',
-          url: 'https://cpanel.example.org',
           icon: 'MonitorIcon',
           open: 'باز کردن cPanel'
       },
@@ -325,7 +323,6 @@ export default {
               'فیلترشکن خود را روشن کنید تا به راحتی به کانال دسترسی داشته باشید.',
           ],
           icon: 'TelegramIcon',
-          url: 'https://t.me/username',
           open: 'رفتن به کانال'
       },
       {
@@ -340,7 +337,6 @@ export default {
               'دریافت راهنمایی و حل مشکلات فنی به صورت سریع و مستقیم'
           ],
           icon: 'TelegramIcon',
-          url: 'https://t.me/username?direct',
           open: 'رفتن به تلگرام'
       },
       {
@@ -354,7 +350,6 @@ export default {
             'دریافت آموزش‌ها و نکات فنی مربوط به سرویس‌ها'
         ],
         icon: 'BaleIcon',
-        url: 'https://ble.ir/username',
         open: 'رفتن به کانال'
       },
       {
@@ -368,7 +363,6 @@ export default {
               'امکان ارسال مستندات و اطلاعات اضافی جهت رفع مشکل'
           ],
           icon: 'MailBoxIcon',
-          url: 'mailto:support[.]example.org',
           open: 'ارسال ایمیل'
       }
     ]

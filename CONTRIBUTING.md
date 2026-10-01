@@ -7,6 +7,7 @@ We'd love for you to get involved in developing this repository.
 | Command | Description |
 |---|---|
 | `npm install` | Install project dependencies |
+| `cp .env.example .env` | Create your local env file, then fill in the values |
 | `npm run dev` | Start the development server |
 | `npm run build` | Build the app for production |
 | `npm run generate` | Generate a static build |

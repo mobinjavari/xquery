@@ -301,7 +301,6 @@ export default {
           id: 'whm',
           title: 'WHM Management Panel',
           desc: 'With WHM, you can manage multiple cPanel accounts, monitor server resources, and easily control security and domain settings.',
-          url: 'https://whm.example.org',
           icon: 'LayersIcon',
           open: 'Open WHM'
       },
@@ -309,7 +308,6 @@ export default {
           id: 'cpanel',
           title: 'cPanel Management Panel',
           desc: 'cPanel allows you to manage files, emails, databases, and domains in the simplest way and have full control over your apps/websites.',
-          url: 'https://cpanel.example.org',
           icon: 'MonitorIcon',
           open: 'Open cPanel'
       },
@@ -324,7 +322,6 @@ export default {
               'Receive tutorials and technical tips'
           ],
           icon: 'TelegramIcon',
-          url: 'https://t.me/username',
           open: 'Go to Channel'
       },
       {
@@ -339,7 +336,6 @@ export default {
               'Receive guidance and resolve technical issues quickly'
           ],
           icon: 'TelegramIcon',
-          url: 'https://t.me/username',
           open: 'Go to Telegram'
       },
       {
@@ -353,7 +349,6 @@ export default {
               "Get tutorials and technical tips related to services"
           ],
           icon: 'BaleIcon',
-          url: 'https://ble.ir/username',
           open: 'Go to Channel'
       },
       {
@@ -367,7 +362,6 @@ export default {
               'Send additional documents and information to resolve problems'
           ],
           icon: 'MailBoxIcon',
-          url: 'mailto:support[.]example.org',
           open: 'Send Email'
       }
     ]
